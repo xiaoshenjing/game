@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://bgxc2a5a1wasx"]
 
+[ext_resource type="Script" uid="uid://d4g3vdkl4nuix" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://casgcs7q8ujxx" path="res://Scenes/player.tscn" id="1_jjgbg"]
 
-[node name="Main" type="Node2D" unique_id=1659155257]
+[node name="Main" type="Window" unique_id=5977098]
+oversampling_override = 1.0
+size = Vector2i(300, 300)
+script = ExtResource("1_bo1nx")
 
 [node name="Player" parent="." unique_id=465985976 instance=ExtResource("1_jjgbg")]
-position = Vector2(554, 352)
+position = Vector2(145, 147)

@@ -13,10 +13,18 @@ config_version=5
 config/name="game"
 run/main_scene="uid://bgxc2a5a1wasx"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 0)
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=300
+window/size/viewport_height=300
+window/size/resizable=false
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
 window/stretch/mode="canvas_items"
 
 [input]
@@ -49,3 +57,7 @@ down={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+viewport/transparent_background=true
