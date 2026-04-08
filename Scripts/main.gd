@@ -10,7 +10,6 @@ func _ready() -> void:
 	win_id = get_window_id()
 	borderless = true
 	always_on_top = true
-	size = Vector2i(300, 300)
 	# Viewport 透明清屏 + OS 逐像素透明（缺任一在 macOS 上常会只剩黑/灰底）
 	transparent_bg = true
 	transparent = true
