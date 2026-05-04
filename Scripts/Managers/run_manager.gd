@@ -1,16 +1,24 @@
-## [Managers] 关卡/流程运行管理器
+## [Managers] 场景路由管理器
 ##
-## 负责关卡切换、场景加载与卸载，统一管理游戏运行流程。
-## 所有场景跳转必须经由此管理器执行，禁止直接调用 SceneTree 切换场景。
+## 负责所有场景的切换与加载，是唯一允许调用 SceneTree 切换场景的地方。
+## 路由规则：监听 GameManager.game_state_changed 信号，根据新状态自动跳转对应场景。
 ##
-## 依赖：GameManager（监听游戏状态信号）
+## 业务代码只需调用 GameManager.change_state()，无需直接操作本管理器。
+##
+## 依赖：GameManager（监听 game_state_changed 信号）
 
 extends Node
 
-# ---- 常量 ----
+# ---- 场景路径常量（所有路由在此集中维护）----
 
-## 主菜单场景路径
-const MAIN_MENU_SCENE: String = "res://Scenes/UI/main_menu.tscn"
+## 主菜单场景
+const SCENE_MAIN_MENU: String = "res://Scenes/UI/main_menu.tscn"
+
+## 游戏进行中的默认关卡（首关）
+const SCENE_LEVEL_01: String = "res://Scenes/Levels/level_01.tscn"
+
+## 游戏结束界面
+const SCENE_GAME_OVER: String = "res://Scenes/UI/game_over.tscn"
 
 # ---- 信号 ----
 
@@ -55,7 +63,15 @@ func get_current_scene_path() -> String:
 func _connect_signals() -> void:
 	GameManager.game_state_changed.connect(_on_game_state_changed)
 
-# 响应游戏状态变化，执行对应场景跳转
+# 路由表：GameState → 对应场景路径，所有路由规则集中在此维护
 func _on_game_state_changed(new_state: GameManager.GameState) -> void:
-	if new_state == GameManager.GameState.MAIN_MENU:
-		load_scene(MAIN_MENU_SCENE)
+	match new_state:
+		GameManager.GameState.MAIN_MENU:
+			load_scene(SCENE_MAIN_MENU)
+		GameManager.GameState.PLAYING:
+			load_scene(SCENE_LEVEL_01)
+		GameManager.GameState.GAME_OVER:
+			load_scene(SCENE_GAME_OVER)
+		GameManager.GameState.PAUSED:
+			# 暂停不切换场景，由 UI 层叠加暂停菜单覆盖
+			pass

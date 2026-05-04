@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bfqfccwsvfy1f"]
+
+[node name="MainMenu" type="Control" unique_id=1696000831]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Button" parent="." unique_id=870333184]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 368.0
+offset_right = 666.0
+offset_bottom = 409.0
+pivot_offset = Vector2(81, 21)
+text = "开始游戏"
+
+[node name="Option" type="Button" parent="." unique_id=1399700357]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 423.0
+offset_right = 666.0
+offset_bottom = 464.0
+text = "设置"
+
+[node name="Quit" type="Button" parent="." unique_id=929016668]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 479.0
+offset_right = 666.0
+offset_bottom = 520.0
+text = "退出"

@@ -60,7 +60,7 @@ func resume_game() -> void:
 	game_resumed.emit()
 
 ## 结束游戏并返回主菜单。
+## 场景跳转由 RunManager 监听 game_state_changed 信号后自动执行。
 func quit_to_main_menu() -> void:
 	get_tree().paused = false
 	change_state(GameState.MAIN_MENU)
-	# TODO: 加载主菜单场景

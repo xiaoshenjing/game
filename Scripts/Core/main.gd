@@ -10,12 +10,5 @@ extends Node
 # ---- 生命周期 ----
 
 func _ready() -> void:
-	_start_game()
-
-# ---- 私有方法 ----
-
-# 启动游戏，切换到 PLAYING 状态
-func _start_game() -> void:
-	GameManager.change_state(GameManager.GameState.MAIN_MENU)
-	# TODO: 加载第一关场景
-	# RunManager.load_scene("res://Scenes/Levels/level_01.tscn")
+	RunManager.load_scene(RunManager.SCENE_MAIN_MENU)
+	pass;
