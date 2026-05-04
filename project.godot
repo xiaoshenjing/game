@@ -23,7 +23,6 @@ RunManager="*res://Scripts/Managers/run_manager.gd"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
