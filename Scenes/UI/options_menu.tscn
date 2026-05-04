@@ -1,50 +1,104 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c5xi7voj7ywwu"]
 
-[ext_resource type="Script" path="res://Scripts/UI/options_menu.gd" id="1_options"]
+[ext_resource type="Script" uid="uid://b1wuoum873mx1" path="res://Scripts/UI/options_menu.gd" id="1_options"]
 
-[node name="OptionsMenu" type="Control"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_run4o"]
+
+[node name="OptionsMenu" type="Control" unique_id=1987931656]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_options")
+
+[node name="Mask" type="TextureRect" parent="." unique_id=57673541]
+modulate = Color(0.9696924, 0.9696924, 0.9696924, 1)
+self_modulate = Color(0.9696924, 0.9696924, 0.9696924, 1)
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_options")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_run4o")
 
-[node name="VBox" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 300.0
-offset_right = 720.0
-offset_bottom = 520.0
-theme_override_constants/separation = 16
+[node name="UI_Pop" type="TextureRect" parent="Mask" unique_id=1308261507]
+modulate = Color(0.011764706, 0.011764706, 0.011764706, 0.7058824)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_run4o")
 
-[node name="Title" type="Label" parent="VBox"]
-layout_mode = 2
-text = "OPTIONS_TITLE"
+[node name="Label_Title" type="Label" parent="Mask/UI_Pop" unique_id=1013007144]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -116.0
+offset_right = 261.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 52
+text = "语言设置"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 28
 
-[node name="LangRow" type="HBoxContainer" parent="VBox"]
-layout_mode = 2
+[node name="Hor" type="HBoxContainer" parent="Mask/UI_Pop" unique_id=804780517]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -15.5
+offset_right = 261.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_constants/separation = 12
 
-[node name="LangLabel" type="Label" parent="VBox/LangRow"]
+[node name="Label_Tip" type="Label" parent="Mask/UI_Pop/Hor" unique_id=1535066496]
 layout_mode = 2
-size_flags_vertical = 4
-text = "OPTIONS_LANGUAGE"
 theme_override_font_sizes/font_size = 18
+text = "OPTIONS_LANGUAGE"
 
-[node name="BtnZH" type="Button" parent="VBox/LangRow"]
+[node name="Btn_ZH" type="Button" parent="Mask/UI_Pop/Hor" unique_id=1210709269]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "OPTIONS_LANG_ZH"
 
-[node name="BtnEN" type="Button" parent="VBox/LangRow"]
+[node name="Btn_EN" type="Button" parent="Mask/UI_Pop/Hor" unique_id=738942621]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "OPTIONS_LANG_EN"
 
-[node name="BtnBack" type="Button" parent="VBox"]
-layout_mode = 2
+[node name="Btn_Claimed" type="Button" parent="Mask/UI_Pop" unique_id=1549577997]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = 47.0
+offset_right = 259.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 text = "OPTIONS_BACK"

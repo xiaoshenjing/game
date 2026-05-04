@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp2k3jnf127ic"
-path="res://.godot/imported/Btn_Medium_Hover.png-7906158811cc55aa11bc71285067d101.ctex"
+uid="uid://bgm4p2g02b0j5"
+path="res://.godot/imported/Btn_Large_Normal.png-e5f2b1c4eac1a7c69c1343eb5eb71804.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Textures/button/Btn_Medium_Hover.png"
-dest_files=["res://.godot/imported/Btn_Medium_Hover.png-7906158811cc55aa11bc71285067d101.ctex"]
+source_file="res://Resources/Textures/Log/Btn_Large_Normal.png"
+dest_files=["res://.godot/imported/Btn_Large_Normal.png-e5f2b1c4eac1a7c69c1343eb5eb71804.ctex"]
 
 [params]
 
