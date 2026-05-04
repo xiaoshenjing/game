@@ -11,10 +11,16 @@ config_version=5
 [application]
 
 config/name="game"
-run/main_scene="uid://bgxc2a5a1wasx"
+run/main_scene="res://Scenes/Main/main.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 0)
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/Managers/game_manager.gd"
+RunManager="*res://Scripts/Managers/run_manager.gd"
+I18nManager="*res://Scripts/Managers/i18n_manager.gd"
 
 [display]
 
