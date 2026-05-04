@@ -10,5 +10,6 @@ extends Node
 # ---- 生命周期 ----
 
 func _ready() -> void:
+	TranslationServer.set_locale("zh")
 	RunManager.load_scene(RunManager.SCENE_MAIN_MENU)
-	pass;
+

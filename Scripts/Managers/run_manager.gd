@@ -20,6 +20,9 @@ const SCENE_LEVEL_01: String = "res://Scenes/Levels/level_01.tscn"
 ## 游戏结束界面
 const SCENE_GAME_OVER: String = "res://Scenes/UI/game_over.tscn"
 
+## 设置菜单场景
+const SCENE_OPTIONS_MENU: String = "res://Scenes/UI/options_menu.tscn"
+
 # ---- 信号 ----
 
 ## 场景开始加载时触发。

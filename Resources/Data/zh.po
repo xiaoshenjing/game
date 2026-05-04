@@ -1,0 +1,30 @@
+# Chinese (Simplified) translation
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+
+msgid "BTN_START"
+msgstr "开始游戏"
+
+msgid "BTN_OPTIONS"
+msgstr "设置"
+
+msgid "BTN_QUIT"
+msgstr "退出"
+
+msgid "OPTIONS_TITLE"
+msgstr "设置"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "语言"
+
+msgid "OPTIONS_LANG_ZH"
+msgstr "中文"
+
+msgid "OPTIONS_LANG_EN"
+msgstr "English"
+
+msgid "OPTIONS_BACK"
+msgstr "返回"

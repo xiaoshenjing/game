@@ -1,0 +1,30 @@
+# English translation
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "BTN_START"
+msgstr "Start Game"
+
+msgid "BTN_OPTIONS"
+msgstr "Options"
+
+msgid "BTN_QUIT"
+msgstr "Quit"
+
+msgid "OPTIONS_TITLE"
+msgstr "Options"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "Language"
+
+msgid "OPTIONS_LANG_ZH"
+msgstr "Chinese"
+
+msgid "OPTIONS_LANG_EN"
+msgstr "English"
+
+msgid "OPTIONS_BACK"
+msgstr "Back"
