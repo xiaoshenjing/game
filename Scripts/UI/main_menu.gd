@@ -9,9 +9,12 @@ extends Control
 
 # ---- 节点引用 ----
 
-@onready var _btn_start: Button = $Start
-@onready var _btn_option: Button = $Option
-@onready var _btn_quit: Button = $Quit
+@onready var _btn_start: Button = $Btn_Start
+@onready var _btn_option: Button = $Btn_Option
+@onready var _btn_quit: Button = $Btn_Quit
+@onready var _lbl_start: Label = $Btn_Start/Label_Start
+@onready var _lbl_option: Label = $Btn_Option/Label_Option
+@onready var _lbl_quit: Label = $Btn_Quit/Label_Quit
 
 # ---- 生命周期 ----
 
@@ -29,9 +32,9 @@ func _connect_signals() -> void:
 
 # 刷新所有文本
 func _refresh_ui() -> void:
-	_btn_start.text = tr("BTN_START")
-	_btn_option.text = tr("BTN_OPTIONS")
-	_btn_quit.text = tr("BTN_QUIT")
+	_lbl_start.text = tr("BTN_START")
+	_lbl_option.text = tr("BTN_OPTIONS")
+	_lbl_quit.text = tr("BTN_QUIT")
 
 # ---- 信号回调 ----
 

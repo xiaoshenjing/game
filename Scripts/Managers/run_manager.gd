@@ -53,6 +53,9 @@ func load_scene(scene_path: String) -> void:
 		return
 	scene_load_started.emit(scene_path)
 	_current_scene_path = scene_path
+	call_deferred("_change_scene", scene_path)
+
+func _change_scene(scene_path: String) -> void:
 	get_tree().change_scene_to_file(scene_path)
 	scene_load_finished.emit(scene_path)
 

@@ -9,11 +9,11 @@ extends Control
 
 # ---- 节点引用 ----
 
-@onready var _title: Label = $VBox/Title
-@onready var _lang_label: Label = $VBox/LangRow/LangLabel
-@onready var _btn_zh: Button = $VBox/LangRow/BtnZH
-@onready var _btn_en: Button = $VBox/LangRow/BtnEN
-@onready var _btn_back: Button = $VBox/BtnBack
+@onready var _title: Label = $Mask/UI_Pop/Label_Title
+@onready var _lang_label: Label = $Mask/UI_Pop/Hor/Label_Tip
+@onready var _btn_zh: Button = $Mask/UI_Pop/Hor/Btn_ZH
+@onready var _btn_en: Button = $Mask/UI_Pop/Hor/Btn_EN
+@onready var _btn_back: Button = $Mask/UI_Pop/Btn_Claimed
 
 # ---- 生命周期 ----
 
