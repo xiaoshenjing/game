@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c7kifi2u5l1ik"]
+
+[ext_resource type="Script" uid="uid://b3r3u2hl1akpj" path="res://Scripts/Entities/player.gd" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://cmsunywnrf3cr" path="res://icon.svg" id="2_66ail"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(32, 64)
+
+[node name="Level01" type="Node2D" unique_id=1519524501]
+
+[node name="Background" type="ColorRect" parent="." unique_id=711414481]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.2, 0.3, 0.8, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=40688743]
+position = Vector2(960, 540)
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1572150065]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1235545980]
+modulate = Color(1, 0.5, 0.8, 1)
+texture = ExtResource("2_66ail")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=758223058]

@@ -10,16 +10,8 @@ extends CharacterBody2D
 
 # ---- 导出变量 ----
 
-## 水平移动速度（像素/秒）
+## 移动速度（像素/秒）
 @export var move_speed: float = 200.0
-
-## 跳跃初速度（像素/秒，负值向上）
-@export var jump_velocity: float = -400.0
-
-# ---- 常量 ----
-
-## 重力加速度，与项目物理设置保持一致
-const GRAVITY: float = 980.0
 
 # ---- 节点引用 ----
 
@@ -53,7 +45,6 @@ func _ready() -> void:
 	_connect_signals()
 
 func _physics_process(delta: float) -> void:
-	_apply_gravity(delta)
 	_handle_movement()
 	move_and_slide()
 
@@ -71,20 +62,13 @@ func take_damage(amount: int) -> void:
 
 # ---- 私有方法 ----
 
-# 应用重力，离地时增加下落速度
-func _apply_gravity(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y += GRAVITY * delta
-
-# 读取输入并更新水平速度与跳跃
+# 读取输入并更新移动
 func _handle_movement() -> void:
-	var direction := Input.get_axis("left", "right")
-	velocity.x = direction * move_speed
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity
+	var direction := Input.get_vector("left", "right", "up", "down")
+	velocity = direction * move_speed
 	# 翻转精灵朝向
-	if direction != 0:
-		_sprite.flip_h = direction < 0
+	if direction.x != 0:
+		_sprite.flip_h = direction.x < 0
 
 # 生命值归零后的处理逻辑
 func _on_health_depleted() -> void:
