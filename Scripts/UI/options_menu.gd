@@ -55,4 +55,4 @@ func _on_btn_en_pressed() -> void:
 	_refresh_ui()
 
 func _on_btn_back_pressed() -> void:
-	RunManager.load_scene(RunManager.SCENE_MAIN_MENU)
+	RunManager.load_scene(RunManager.SceneType.MAIN_MENU)

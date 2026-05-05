@@ -42,7 +42,7 @@ func _on_start_pressed() -> void:
 	GameManager.change_state(GameManager.GameState.PLAYING)
 
 func _on_option_pressed() -> void:
-	RunManager.load_scene(RunManager.SCENE_OPTIONS_MENU)
+	RunManager.load_scene(RunManager.SceneType.OPTIONS_MENU)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

@@ -72,6 +72,36 @@ get_node("/root/UI").show_game_over()
 extends Entity > extends LivingEntity > extends Player
 ```
 
+### 游戏状态管理规范
+- **场景切换必须通过 GameManager.change_state() 驱动**，不要直接调用 RunManager.load_scene()
+- **返回主菜单使用 GameManager.quit_to_main_menu()**，确保游戏状态正确重置
+- **RunManager 监听 game_state_changed 信号自动执行场景切换**，保持架构解耦
+- **GameState 枚举**: MAIN_MENU（主菜单）、PLAYING（游戏中）、PAUSED（暂停）、GAME_OVER（游戏结束）
+```gdscript
+# ✅ 正确：从游戏返回主菜单
+GameManager.quit_to_main_menu()
+
+# ✅ 正确：进入游戏
+GameManager.change_state(GameManager.GameState.PLAYING)
+
+# ❌ 错误：直接调用场景管理器
+RunManager.load_scene(RunManager.SceneType.MAIN_MENU)
+```
+
+### 国际化规范
+- **所有显示文本使用 tr() 函数**，支持多语言切换
+- **翻译文本统一管理**（Godot 内置翻译系统）
+- **不要在代码中硬编码显示文本**
+```gdscript
+# ✅ 正确
+_lbl_start.text = tr("BTN_START")
+_btn_back.text = tr("OPTIONS_BACK")
+
+# ❌ 错误
+_lbl_start.text = "开始游戏"
+_btn_back.text = "返回"
+```
+
 ---
 
 ## 脚本注释规范

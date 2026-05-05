@@ -9,19 +9,14 @@
 
 extends Node
 
-# ---- 场景路径常量（所有路由在此集中维护）----
+# ---- 场景路径对象常量（所有路由在此集中维护）----
 
-## 主菜单场景
-const SCENE_MAIN_MENU: String = "res://Scenes/UI/main_menu.tscn"
-
-## 游戏进行中的默认关卡（首关）
-const SCENE_LEVEL_01: String = "res://Scenes/Levels/level_01.tscn"
-
-## 游戏结束界面
-const SCENE_GAME_OVER: String = "res://Scenes/UI/game_over.tscn"
-
-## 设置菜单场景
-const SCENE_OPTIONS_MENU: String = "res://Scenes/UI/options_menu.tscn"
+const SceneType = {
+	MAIN_MENU = "res://Scenes/UI/main_menu.tscn",
+	LEVEL_01 = "res://Scenes/Levels/level_01.tscn",
+	GAME_OVER = "res://Scenes/UI/game_over.tscn",
+	OPTIONS_MENU = "res://Scenes/UI/options_menu.tscn"
+}
 
 # ---- 信号 ----
 
@@ -73,11 +68,11 @@ func _connect_signals() -> void:
 func _on_game_state_changed(new_state: GameManager.GameState) -> void:
 	match new_state:
 		GameManager.GameState.MAIN_MENU:
-			load_scene(SCENE_MAIN_MENU)
+			load_scene(SceneType.MAIN_MENU)
 		GameManager.GameState.PLAYING:
-			load_scene(SCENE_LEVEL_01)
+			load_scene(SceneType.LEVEL_01)
 		GameManager.GameState.GAME_OVER:
-			load_scene(SCENE_GAME_OVER)
+			load_scene(SceneType.GAME_OVER)
 		GameManager.GameState.PAUSED:
 			# 暂停不切换场景，由 UI 层叠加暂停菜单覆盖
 			pass
